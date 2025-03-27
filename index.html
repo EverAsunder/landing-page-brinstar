@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brinstar Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      .logo-animate:hover {
+        transform: rotate(3deg) scale(1.05);
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-950 text-white font-mono min-h-screen flex flex-col">
+    <header class="p-6 flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <img src="/logo.png" alt="Brinstar Studio Logo" class="w-16 h-16" />
+        <h1 class="text-2xl font-bold">Brinstar Studio</h1>
+      </div>
+      <nav>
+        <a href="#projects" class="text-pink-400 hover:underline text-lg">Projects</a>
+      </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
+      <img src="/logo.png" alt="Brinstar Studio Logo" class="w-32 h-32 mb-6 logo-animate" />
+      <h2 class="text-3xl md:text-5xl font-bold text-pink-400 mb-4">Crafting playful digital tools</h2>
+      <p class="text-lg md:text-xl text-gray-300 max-w-xl mb-8">
+        Bridging user experience and tech through handcrafted apps.
+      </p>
+      <a href="mailto:hugo@brinstar.fr" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded shadow mb-16">
+        Contact Us
+      </a>
+
+      <section id="about" class="max-w-3xl text-left">
+        <h3 class="text-2xl font-bold text-pink-300 mb-4">About</h3>
+        <p class="text-gray-300 mb-6">
+          Brinstar Studio is an independent creative tech initiative dedicated to building simple, beautiful, and engaging applications. Rooted in the aesthetics of retro gaming and powered by modern web technologies, we aim to deliver delightful tools that balance utility and style (you guessed right, an AI helped write this stuff...).
+        </p>
+      </section>
+
+      <section id="projects" class="max-w-3xl text-left mt-12">
+        <h3 class="text-2xl font-bold text-pink-300 mb-4">Projects</h3>
+        <div class="bg-gray-900 rounded-lg p-4 shadow mb-4">
+          <h4 class="text-xl font-semibold text-white">EZFood</h4>
+          <p class="text-gray-400">
+            A minimalist, user-friendly meal planning app designed to simplify your weekly food organization. Soft pastel visuals, intuitive UI, and quick planning for busy lives.
+          </p>
+        </div>
+        <p class="text-sm text-gray-500">More projects coming soon...</p>
+      </section>
+    </main>
+
+    <footer class="p-4 text-center text-sm text-gray-500">
+      &copy; 2025 Brinstar Studio — All rights reserved.
+    </footer>
+  </body>
+</html>
