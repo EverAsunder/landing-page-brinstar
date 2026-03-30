@@ -1,0 +1,22 @@
+# Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (au cas où)
+node_modules/
+npm-debug.log*
+
+# Environment
+.env
+.env.*
