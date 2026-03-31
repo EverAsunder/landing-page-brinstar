@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brinstar Studio — Crafting playful digital tools</title>
-    <meta name="description" content="Brinstar Studio builds simple, beautiful apps for productivity and personal growth, with a retro gaming aesthetic." />
+    <title>Brinstar Studio — Des outils numériques fun et utiles</title>
+    <meta name="description" content="Brinstar Studio crée des apps simples et belles pour la productivité et le bien-être personnel, avec une esthétique retro gaming." />
     <meta property="og:title" content="Brinstar Studio" />
-    <meta property="og:description" content="Crafting playful digital tools — productivity, wellness, and personal growth apps with retro gaming vibes." />
+    <meta property="og:description" content="Des outils numériques fun et utiles — apps de productivité et bien-être avec une esthétique retro gaming." />
     <meta property="og:image" content="https://brinstar.fr/logo.png" />
     <meta property="og:url" content="https://brinstar.fr" />
     <meta property="og:type" content="website" />
@@ -19,7 +19,7 @@
       "name": "Brinstar Studio",
       "url": "https://brinstar.fr",
       "logo": "https://brinstar.fr/logo.png",
-      "description": "Brinstar Studio builds simple, beautiful apps for productivity and personal growth, with a retro gaming aesthetic.",
+      "description": "Brinstar Studio crée des apps simples et belles pour la productivité et le bien-être personnel, avec une esthétique retro gaming.",
       "email": "hugo@brinstar.fr"
     }
     </script>
@@ -38,6 +38,9 @@
         transform: rotate(3deg) scale(1.05);
         transition: transform 0.3s ease-in-out;
       }
+      .lang-btn { opacity: 0.5; cursor: pointer; transition: opacity 0.2s; }
+      .lang-btn.active { opacity: 1; }
+      .lang-btn:hover { opacity: 0.8; }
     </style>
   </head>
   <body class="bg-gray-950 text-white font-mono min-h-screen flex flex-col">
@@ -46,63 +49,121 @@
         <img src="/logo.png" alt="Brinstar Studio Logo" class="w-16 h-16" />
         <h1 class="text-2xl font-bold">Brinstar Studio</h1>
       </div>
-      <nav>
-        <a href="#projects" class="text-pink-400 hover:underline text-lg">Projects</a>
+      <nav class="flex items-center space-x-4">
+        <a href="#projects" class="text-pink-400 hover:underline text-lg" data-i18n="nav_projects">Projets</a>
+        <div class="flex items-center space-x-1 text-sm">
+          <button onclick="setLang('fr')" class="lang-btn active" id="lang-fr">FR</button>
+          <span class="text-gray-600">|</span>
+          <button onclick="setLang('en')" class="lang-btn" id="lang-en">EN</button>
+        </div>
       </nav>
     </header>
 
     <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
       <img src="/logo.png" alt="Brinstar Studio Logo" class="w-32 h-32 mb-6 logo-animate" />
-      <h2 class="text-3xl md:text-5xl font-bold text-pink-400 mb-4">Crafting playful digital tools</h2>
-      <p class="text-lg md:text-xl text-gray-300 max-w-xl mb-8">
-        Bridging user experience and tech through handcrafted apps.
+      <h2 class="text-3xl md:text-5xl font-bold text-pink-400 mb-4" data-i18n="hero_title">Des outils numériques fun et utiles</h2>
+      <p class="text-lg md:text-xl text-gray-300 max-w-xl mb-8" data-i18n="hero_subtitle">
+        Des apps soignées qui allient expérience utilisateur et technologie.
       </p>
-      <a href="mailto:hugo@brinstar.fr" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded shadow mb-16">
-        Contact Us
+      <a href="mailto:hugo@brinstar.fr" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded shadow mb-16" data-i18n="contact_btn">
+        Nous contacter
       </a>
 
       <section id="about" class="max-w-3xl text-left">
-        <h3 class="text-2xl font-bold text-pink-300 mb-4">About</h3>
-        <p class="text-gray-300 mb-6">
-          Brinstar Studio is an independent creative tech initiative dedicated to building simple, beautiful, and engaging applications. Rooted in the aesthetics of retro gaming and powered by modern web technologies, we aim to deliver delightful tools that balance utility and style.
+        <h3 class="text-2xl font-bold text-pink-300 mb-4" data-i18n="about_title">À propos</h3>
+        <p class="text-gray-300 mb-6" data-i18n="about_text">
+          Brinstar Studio est une initiative tech indépendante dédiée à la création d'applications simples, belles et engageantes. Ancrée dans l'esthétique du retro gaming et propulsée par des technologies web modernes, notre ambition est de concevoir des outils qui allient utilité et style.
         </p>
       </section>
 
       <section id="projects" class="max-w-3xl text-left mt-12">
-        <h3 class="text-2xl font-bold text-pink-300 mb-4">Projects</h3>
+        <h3 class="text-2xl font-bold text-pink-300 mb-4" data-i18n="projects_title">Projets</h3>
         <div class="bg-gray-900 rounded-lg p-4 shadow mb-4">
           <h4 class="text-xl font-semibold text-white">Habit Loop</h4>
-          <p class="text-gray-400">
-            A minimalist habit tracker with streaks, daily check-ins, and weekly views. Build better routines, one day at a time.
+          <p class="text-gray-400" data-i18n="habitloop_desc">
+            Un tracker d'habitudes minimaliste avec streaks, check-ins quotidiens et vue hebdomadaire. Construisez de meilleures routines, un jour à la fois.
           </p>
-          <a href="https://habitloop.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50">Try it →</a>
+          <a href="https://habitloop.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Essayer →</a>
         </div>
         <div class="bg-gray-900 rounded-lg p-4 shadow mb-4">
           <h4 class="text-xl font-semibold text-white">Recall</h4>
-          <p class="text-gray-400">
-            A hub of brain training mini-games to sharpen your memory and focus. Quick sessions, retro vibes.
+          <p class="text-gray-400" data-i18n="recall_desc">
+            Un hub de mini-jeux de brain training pour aiguiser votre mémoire et votre concentration. Sessions rapides, ambiance rétro.
           </p>
-          <a href="https://recall.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50">Try it →</a>
+          <a href="https://recall.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Essayer →</a>
         </div>
         <div class="bg-gray-900 rounded-lg p-4 shadow mb-4">
           <h4 class="text-xl font-semibold text-white">Wallrun</h4>
-          <p class="text-gray-400">
-            A strategy board game inspired by Quoridor. Outsmart your opponent by building walls and racing to the other side.
+          <p class="text-gray-400" data-i18n="wallrun_desc">
+            Un jeu de plateau stratégique inspiré de Quoridor. Déjouez votre adversaire en posant des murs et en fonçant vers l'autre côté.
           </p>
-          <a href="https://wallrun.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50">Try it →</a>
+          <a href="https://wallrun.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Essayer →</a>
         </div>
         <div class="bg-gray-900 rounded-lg p-4 shadow mb-4">
           <h4 class="text-xl font-semibold text-white">MealMap</h4>
-          <p class="text-gray-400">
-            A minimalist meal planning app to simplify your weekly food organization. Soft pastel visuals, intuitive UI, and quick planning for busy lives.
+          <p class="text-gray-400" data-i18n="mealmap_desc">
+            Une app minimaliste de planification de repas pour simplifier votre organisation alimentaire. Visuels pastels, UI intuitive, planification rapide.
           </p>
-          <span class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded">Coming soon</span>
+          <a href="https://mealmap.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Essayer →</a>
         </div>
       </section>
     </main>
 
     <footer class="p-4 text-center text-sm text-gray-500">
-      &copy; 2026 Brinstar Studio — All rights reserved.
+      <span data-i18n="footer">&copy; 2026 Brinstar Studio — Tous droits réservés.</span>
     </footer>
+    <script>
+      var translations = {
+        fr: {
+          nav_projects: 'Projets',
+          hero_title: 'Des outils numériques fun et utiles',
+          hero_subtitle: 'Des apps soignées qui allient expérience utilisateur et technologie.',
+          contact_btn: 'Nous contacter',
+          about_title: 'À propos',
+          about_text: "Brinstar Studio est une initiative tech indépendante dédiée à la création d'applications simples, belles et engageantes. Ancrée dans l'esthétique du retro gaming et propulsée par des technologies web modernes, notre ambition est de concevoir des outils qui allient utilité et style.",
+          projects_title: 'Projets',
+          habitloop_desc: "Un tracker d'habitudes minimaliste avec streaks, check-ins quotidiens et vue hebdomadaire. Construisez de meilleures routines, un jour à la fois.",
+          recall_desc: 'Un hub de mini-jeux de brain training pour aiguiser votre mémoire et votre concentration. Sessions rapides, ambiance rétro.',
+          wallrun_desc: "Un jeu de plateau stratégique inspiré de Quoridor. Déjouez votre adversaire en posant des murs et en fonçant vers l'autre côté.",
+          mealmap_desc: 'Une app minimaliste de planification de repas pour simplifier votre organisation alimentaire. Visuels pastels, UI intuitive, planification rapide.',
+          try_it: 'Essayer →',
+          footer: '© 2026 Brinstar Studio — Tous droits réservés.'
+        },
+        en: {
+          nav_projects: 'Projects',
+          hero_title: 'Crafting playful digital tools',
+          hero_subtitle: 'Bridging user experience and tech through handcrafted apps.',
+          contact_btn: 'Contact Us',
+          about_title: 'About',
+          about_text: 'Brinstar Studio is an independent creative tech initiative dedicated to building simple, beautiful, and engaging applications. Rooted in the aesthetics of retro gaming and powered by modern web technologies, we aim to deliver delightful tools that balance utility and style.',
+          projects_title: 'Projects',
+          habitloop_desc: 'A minimalist habit tracker with streaks, daily check-ins, and weekly views. Build better routines, one day at a time.',
+          recall_desc: 'A hub of brain training mini-games to sharpen your memory and focus. Quick sessions, retro vibes.',
+          wallrun_desc: 'A strategy board game inspired by Quoridor. Outsmart your opponent by building walls and racing to the other side.',
+          mealmap_desc: 'A minimalist meal planning app to simplify your weekly food organization. Soft pastel visuals, intuitive UI, and quick planning for busy lives.',
+          try_it: 'Try it →',
+          footer: '© 2026 Brinstar Studio — All rights reserved.'
+        }
+      };
+
+      function setLang(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n');
+          if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+        document.getElementById('lang-fr').classList.toggle('active', lang === 'fr');
+        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+        localStorage.setItem('brinstar-lang', lang);
+      }
+
+      (function() {
+        var saved = localStorage.getItem('brinstar-lang');
+        var lang = saved || (navigator.language.startsWith('fr') ? 'fr' : 'en');
+        if (lang !== 'fr') setLang(lang);
+      })();
+    </script>
   </body>
 </html>
