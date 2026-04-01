@@ -391,6 +391,12 @@ var translations = {
   }
 };
 
+var pageTitles = {
+  '/': { fr: 'Brinstar Studio — Des outils numériques fun et utiles', en: 'Brinstar Studio — Crafting playful digital tools' },
+  '/legal': { fr: 'Brinstar Studio — Mentions légales', en: 'Brinstar Studio — Legal' },
+  '/legal.html': { fr: 'Brinstar Studio — Mentions légales', en: 'Brinstar Studio — Legal' }
+};
+
 function setLang(lang) {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(function(el) {
@@ -403,6 +409,10 @@ function setLang(lang) {
       }
     }
   });
+  var path = window.location.pathname.replace(/\/index\.html$/, '/');
+  if (pageTitles[path] && pageTitles[path][lang]) {
+    document.title = pageTitles[path][lang];
+  }
   document.getElementById('lang-fr').classList.toggle('active', lang === 'fr');
   document.getElementById('lang-en').classList.toggle('active', lang === 'en');
   localStorage.setItem('brinstar-lang', lang);
@@ -411,5 +421,5 @@ function setLang(lang) {
 (function() {
   var saved = localStorage.getItem('brinstar-lang');
   var lang = saved || (navigator.language.startsWith('fr') ? 'fr' : 'en');
-  if (lang !== 'fr') setLang(lang);
+  if (lang !== 'en') setLang(lang);
 })();
