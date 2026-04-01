@@ -23,15 +23,7 @@
       "email": "hugo@brinstar.fr"
     }
     </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZS7GYHQXM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-VZS7GYHQXM');
-    </script>
+    <!-- GA4 loaded conditionally via cookie consent (see i18n.js / cookie banner) -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
       .logo-animate:hover {
@@ -109,60 +101,63 @@
       </section>
     </main>
 
-    <footer class="p-4 text-center text-sm text-gray-500">
-      <span data-i18n="footer">&copy; 2026 Brinstar Studio — Tous droits réservés.</span>
+    <footer class="p-4 text-center text-sm text-gray-500 space-y-2">
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/legal#mentions" class="hover:text-pink-400" data-i18n="footer_legal">Mentions légales</a>
+        <span class="text-gray-700">·</span>
+        <a href="/legal#privacy" class="hover:text-pink-400" data-i18n="footer_privacy">Confidentialité</a>
+        <span class="text-gray-700">·</span>
+        <a href="/legal#terms" class="hover:text-pink-400" data-i18n="footer_terms">CGU</a>
+        <span class="text-gray-700">·</span>
+        <button onclick="resetCookieConsent()" class="hover:text-pink-400" data-i18n="footer_cookies">Gérer les cookies</button>
+      </div>
+      <div data-i18n="footer">&copy; 2026 Brinstar Studio — Tous droits réservés.</div>
     </footer>
-    <script>
-      var translations = {
-        fr: {
-          nav_projects: 'Projets',
-          hero_title: 'Des outils numériques fun et utiles',
-          hero_subtitle: 'Des apps soignées qui allient expérience utilisateur et technologie.',
-          contact_btn: 'Nous contacter',
-          about_title: 'À propos',
-          about_text: "Brinstar Studio est une initiative tech indépendante dédiée à la création d'applications simples, belles et engageantes. Ancrée dans l'esthétique du retro gaming et propulsée par des technologies web modernes, notre ambition est de concevoir des outils qui allient utilité et style.",
-          projects_title: 'Projets',
-          habitloop_desc: "Un tracker d'habitudes minimaliste avec streaks, check-ins quotidiens et vue hebdomadaire. Construisez de meilleures routines, un jour à la fois.",
-          recall_desc: 'Un hub de mini-jeux de brain training pour aiguiser votre mémoire et votre concentration. Sessions rapides, ambiance rétro.',
-          wallrun_desc: "Un jeu de plateau stratégique inspiré de Quoridor. Déjouez votre adversaire en posant des murs et en fonçant vers l'autre côté.",
-          mealmap_desc: 'Une app minimaliste de planification de repas pour simplifier votre organisation alimentaire. Visuels pastels, UI intuitive, planification rapide.',
-          try_it: 'Essayer →',
-          footer: '© 2026 Brinstar Studio — Tous droits réservés.'
-        },
-        en: {
-          nav_projects: 'Projects',
-          hero_title: 'Crafting playful digital tools',
-          hero_subtitle: 'Bridging user experience and tech through handcrafted apps.',
-          contact_btn: 'Contact Us',
-          about_title: 'About',
-          about_text: 'Brinstar Studio is an independent creative tech initiative dedicated to building simple, beautiful, and engaging applications. Rooted in the aesthetics of retro gaming and powered by modern web technologies, we aim to deliver delightful tools that balance utility and style.',
-          projects_title: 'Projects',
-          habitloop_desc: 'A minimalist habit tracker with streaks, daily check-ins, and weekly views. Build better routines, one day at a time.',
-          recall_desc: 'A hub of brain training mini-games to sharpen your memory and focus. Quick sessions, retro vibes.',
-          wallrun_desc: 'A strategy board game inspired by Quoridor. Outsmart your opponent by building walls and racing to the other side.',
-          mealmap_desc: 'A minimalist meal planning app to simplify your weekly food organization. Soft pastel visuals, intuitive UI, and quick planning for busy lives.',
-          try_it: 'Try it →',
-          footer: '© 2026 Brinstar Studio — All rights reserved.'
-        }
-      };
 
-      function setLang(lang) {
-        document.documentElement.lang = lang;
-        document.querySelectorAll('[data-i18n]').forEach(function(el) {
-          var key = el.getAttribute('data-i18n');
-          if (translations[lang][key]) {
-            el.textContent = translations[lang][key];
-          }
-        });
-        document.getElementById('lang-fr').classList.toggle('active', lang === 'fr');
-        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-        localStorage.setItem('brinstar-lang', lang);
+    <!-- Cookie consent banner -->
+    <div id="cookie-banner" class="hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 p-4 z-50">
+      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-3 text-sm">
+        <p class="text-gray-300 flex-grow" data-i18n="cookie_text">Nous utilisons des cookies analytiques pour améliorer nos services.</p>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <a href="/legal#cookies" class="text-pink-400 hover:underline text-xs" data-i18n="cookie_more">En savoir plus</a>
+          <button onclick="setCookieConsent('declined')" class="px-3 py-1 border border-gray-500 text-gray-300 rounded hover:border-pink-400 hover:text-pink-400" data-i18n="cookie_decline">Refuser</button>
+          <button onclick="setCookieConsent('accepted')" class="px-3 py-1 bg-pink-500 hover:bg-pink-600 text-white rounded" data-i18n="cookie_accept">Accepter</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/i18n.js"></script>
+    <script>
+      function initAnalytics() {
+        if (localStorage.getItem('brinstar_consent') !== 'accepted') return;
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VZS7GYHQXM';
+        script.async = true;
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VZS7GYHQXM', { anonymize_ip: true, cookie_flags: 'SameSite=None;Secure' });
+      }
+
+      function setCookieConsent(value) {
+        localStorage.setItem('brinstar_consent', value);
+        document.getElementById('cookie-banner').classList.add('hidden');
+        if (value === 'accepted') initAnalytics();
+      }
+
+      function resetCookieConsent() {
+        localStorage.removeItem('brinstar_consent');
+        document.getElementById('cookie-banner').classList.remove('hidden');
       }
 
       (function() {
-        var saved = localStorage.getItem('brinstar-lang');
-        var lang = saved || (navigator.language.startsWith('fr') ? 'fr' : 'en');
-        if (lang !== 'fr') setLang(lang);
+        var consent = localStorage.getItem('brinstar_consent');
+        if (!consent) {
+          document.getElementById('cookie-banner').classList.remove('hidden');
+        } else if (consent === 'accepted') {
+          initAnalytics();
+        }
       })();
     </script>
   </body>
