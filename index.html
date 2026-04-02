@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brinstar Studio — Des outils numériques fun et utiles</title>
-    <meta name="description" content="Brinstar Studio crée des apps simples et belles pour la productivité et le bien-être personnel, avec une esthétique retro gaming." />
+    <title>Brinstar Studio — Crafting playful digital tools</title>
+    <meta name="description" content="Brinstar Studio builds simple, beautiful apps for productivity and personal growth, with a retro gaming aesthetic." />
     <meta property="og:title" content="Brinstar Studio" />
-    <meta property="og:description" content="Des outils numériques fun et utiles — apps de productivité et bien-être avec une esthétique retro gaming." />
+    <meta property="og:description" content="Crafting playful digital tools — productivity, wellness, and personal growth apps with retro gaming vibes." />
     <meta property="og:image" content="https://brinstar.fr/logo.png" />
     <meta property="og:url" content="https://brinstar.fr" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="fr_FR" />
     <link rel="canonical" href="https://brinstar.fr/" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <script type="application/ld+json">
@@ -19,7 +21,7 @@
       "name": "Brinstar Studio",
       "url": "https://brinstar.fr",
       "logo": "https://brinstar.fr/logo.png",
-      "description": "Brinstar Studio crée des apps simples et belles pour la productivité et le bien-être personnel, avec une esthétique retro gaming.",
+      "description": "Brinstar Studio builds simple, beautiful apps for productivity and personal growth, with a retro gaming aesthetic.",
       "email": "hugo@brinstar.fr"
     }
     </script>
@@ -30,9 +32,9 @@
         transform: rotate(3deg) scale(1.05);
         transition: transform 0.3s ease-in-out;
       }
-      .lang-btn { opacity: 0.5; cursor: pointer; transition: opacity 0.2s; }
-      .lang-btn.active { opacity: 1; }
-      .lang-btn:hover { opacity: 0.8; }
+      .lang-btn { color: #9ca3af; cursor: pointer; transition: color 0.2s; }
+      .lang-btn.active { color: #f472b6; font-weight: 600; }
+      .lang-btn:hover { color: #f9a8d4; }
     </style>
   </head>
   <body class="bg-gray-950 text-white font-mono min-h-screen flex flex-col">
@@ -42,86 +44,86 @@
         <h1 class="text-2xl font-bold">Brinstar Studio</h1>
       </div>
       <nav class="flex items-center space-x-4">
-        <a href="#projects" class="text-pink-400 hover:underline text-lg" data-i18n="nav_projects">Projets</a>
+        <a href="#projects" class="text-pink-400 hover:underline text-lg" data-i18n="nav_projects">Projects</a>
         <div class="flex items-center space-x-1 text-sm">
-          <button onclick="setLang('fr')" class="lang-btn active" id="lang-fr">FR</button>
+          <button onclick="setLang('fr')" class="lang-btn" id="lang-fr">FR</button>
           <span class="text-gray-600">|</span>
-          <button onclick="setLang('en')" class="lang-btn" id="lang-en">EN</button>
+          <button onclick="setLang('en')" class="lang-btn active" id="lang-en">EN</button>
         </div>
       </nav>
     </header>
 
     <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
       <img src="/logo.png" alt="Brinstar Studio Logo" class="w-32 h-32 mb-6 logo-animate" />
-      <h2 class="text-3xl md:text-5xl font-bold text-pink-400 mb-4" data-i18n="hero_title">Des outils numériques fun et utiles</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-pink-400 mb-4" data-i18n="hero_title">Crafting playful digital tools</h2>
       <p class="text-lg md:text-xl text-gray-300 max-w-xl mb-8" data-i18n="hero_subtitle">
-        Des apps soignées qui allient expérience utilisateur et technologie.
+        Bridging user experience and tech through handcrafted apps.
       </p>
       <a href="mailto:hugo@brinstar.fr" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded shadow mb-16" data-i18n="contact_btn">
-        Nous contacter
+        Contact Us
       </a>
 
       <section id="about" class="max-w-3xl text-left">
-        <h3 class="text-2xl font-bold text-pink-300 mb-4" data-i18n="about_title">À propos</h3>
+        <h3 class="text-2xl font-bold text-pink-300 mb-4" data-i18n="about_title">About</h3>
         <p class="text-gray-300 mb-6" data-i18n="about_text">
-          Brinstar Studio est une initiative tech indépendante dédiée à la création d'applications simples, belles et engageantes. Ancrée dans l'esthétique du retro gaming et propulsée par des technologies web modernes, notre ambition est de concevoir des outils qui allient utilité et style.
+          Brinstar Studio is an independent creative tech initiative dedicated to building simple, beautiful, and engaging applications. Rooted in the aesthetics of retro gaming and powered by modern web technologies, we aim to deliver delightful tools that balance utility and style.
         </p>
       </section>
 
       <section id="projects" class="max-w-3xl text-left mt-12">
-        <h3 class="text-2xl font-bold text-pink-300 mb-4" data-i18n="projects_title">Projets</h3>
+        <h3 class="text-2xl font-bold text-pink-300 mb-4" data-i18n="projects_title">Projects</h3>
         <div class="bg-gray-900 rounded-lg p-4 shadow mb-4">
           <h4 class="text-xl font-semibold text-white">Habit Loop</h4>
           <p class="text-gray-400" data-i18n="habitloop_desc">
-            Un tracker d'habitudes minimaliste avec streaks, check-ins quotidiens et vue hebdomadaire. Construisez de meilleures routines, un jour à la fois.
+            A minimalist habit tracker with streaks, daily check-ins, and weekly views. Build better routines, one day at a time.
           </p>
-          <a href="https://habitloop.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Essayer →</a>
+          <a href="https://habitloop.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Try it →</a>
         </div>
         <div class="bg-gray-900 rounded-lg p-4 shadow mb-4">
           <h4 class="text-xl font-semibold text-white">Recall</h4>
           <p class="text-gray-400" data-i18n="recall_desc">
-            Un hub de mini-jeux de brain training pour aiguiser votre mémoire et votre concentration. Sessions rapides, ambiance rétro.
+            A hub of brain training mini-games to sharpen your memory and focus. Quick sessions, retro vibes.
           </p>
-          <a href="https://recall.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Essayer →</a>
+          <a href="https://recall.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Try it →</a>
         </div>
         <div class="bg-gray-900 rounded-lg p-4 shadow mb-4">
           <h4 class="text-xl font-semibold text-white">Wallrun</h4>
           <p class="text-gray-400" data-i18n="wallrun_desc">
-            Un jeu de plateau stratégique inspiré de Quoridor. Déjouez votre adversaire en posant des murs et en fonçant vers l'autre côté.
+            A strategy board game inspired by Quoridor. Outsmart your opponent by building walls and racing to the other side.
           </p>
-          <a href="https://wallrun.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Essayer →</a>
+          <a href="https://wallrun.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Try it →</a>
         </div>
         <div class="bg-gray-900 rounded-lg p-4 shadow mb-4">
           <h4 class="text-xl font-semibold text-white">MealMap</h4>
           <p class="text-gray-400" data-i18n="mealmap_desc">
-            Une app minimaliste de planification de repas pour simplifier votre organisation alimentaire. Visuels pastels, UI intuitive, planification rapide.
+            A minimalist meal planning app to simplify your weekly food organization. Soft pastel visuals, intuitive UI, and quick planning for busy lives.
           </p>
-          <a href="https://mealmap.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Essayer →</a>
+          <a href="https://mealmap.brinstar.fr" class="inline-block mt-2 text-xs text-pink-400 bg-pink-900 bg-opacity-30 px-2 py-1 rounded hover:bg-opacity-50" data-i18n="try_it">Try it →</a>
         </div>
       </section>
     </main>
 
     <footer class="p-4 text-center text-sm text-gray-500 space-y-2">
       <div class="flex flex-wrap justify-center gap-3">
-        <a href="/legal#mentions" class="hover:text-pink-400" data-i18n="footer_legal">Mentions légales</a>
+        <a href="/legal#mentions" class="hover:text-pink-400" data-i18n="footer_legal">Legal notice</a>
         <span class="text-gray-700">·</span>
-        <a href="/legal#privacy" class="hover:text-pink-400" data-i18n="footer_privacy">Confidentialité</a>
+        <a href="/legal#privacy" class="hover:text-pink-400" data-i18n="footer_privacy">Privacy</a>
         <span class="text-gray-700">·</span>
-        <a href="/legal#terms" class="hover:text-pink-400" data-i18n="footer_terms">CGU</a>
+        <a href="/legal#terms" class="hover:text-pink-400" data-i18n="footer_terms">Terms</a>
         <span class="text-gray-700">·</span>
-        <button onclick="resetCookieConsent()" class="hover:text-pink-400" data-i18n="footer_cookies">Gérer les cookies</button>
+        <button onclick="resetCookieConsent()" class="hover:text-pink-400" data-i18n="footer_cookies">Manage cookies</button>
       </div>
-      <div data-i18n="footer">&copy; 2026 Brinstar Studio — Tous droits réservés.</div>
+      <div data-i18n="footer">&copy; 2026 Brinstar Studio — All rights reserved.</div>
     </footer>
 
     <!-- Cookie consent banner -->
     <div id="cookie-banner" class="hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 p-4 z-50">
       <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-3 text-sm">
-        <p class="text-gray-300 flex-grow" data-i18n="cookie_text">Nous utilisons des cookies analytiques pour améliorer nos services.</p>
+        <p class="text-gray-300 flex-grow" data-i18n="cookie_text">We use analytics cookies to improve our services.</p>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <a href="/legal#cookies" class="text-pink-400 hover:underline text-xs" data-i18n="cookie_more">En savoir plus</a>
-          <button onclick="setCookieConsent('declined')" class="px-3 py-1 border border-gray-500 text-gray-300 rounded hover:border-pink-400 hover:text-pink-400" data-i18n="cookie_decline">Refuser</button>
-          <button onclick="setCookieConsent('accepted')" class="px-3 py-1 bg-pink-500 hover:bg-pink-600 text-white rounded" data-i18n="cookie_accept">Accepter</button>
+          <a href="/legal#cookies" class="text-pink-400 hover:underline text-xs" data-i18n="cookie_more">Learn more</a>
+          <button onclick="setCookieConsent('declined')" class="px-3 py-1 border border-gray-500 text-gray-300 rounded hover:border-pink-400 hover:text-pink-400" data-i18n="cookie_decline">Decline</button>
+          <button onclick="setCookieConsent('accepted')" class="px-3 py-1 bg-pink-500 hover:bg-pink-600 text-white rounded" data-i18n="cookie_accept">Accept</button>
         </div>
       </div>
     </div>
