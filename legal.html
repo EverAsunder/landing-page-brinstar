@@ -61,17 +61,18 @@
         <h3 class="text-xl font-semibold text-pink-300 mb-3" data-i18n="mentions_publisher_title">Publisher</h3>
         <ul class="text-gray-300 space-y-1 mb-6 list-none">
           <li><span class="text-gray-500">Company name:</span> Brinstar Studio</li>
-          <li><span class="text-gray-500" data-i18n="mentions_legal_form_label">Legal form:</span> <span data-i18n="mentions_legal_form">SASU (Simplified Joint-Stock Company, sole shareholder) — registered in France</span></li>
-          <li><span class="text-gray-500" data-i18n="mentions_address_label">Registered office:</span> [REGISTERED ADDRESS]</li>
-          <li><span class="text-gray-500">SIREN:</span> [SIREN NUMBER]</li>
-          <li><span class="text-gray-500">SIRET:</span> [SIRET NUMBER]</li>
-          <li><span class="text-gray-500" data-i18n="mentions_capital_label">Share capital:</span> [AMOUNT] &euro;</li>
-          <li><span class="text-gray-500" data-i18n="mentions_president_label">President:</span> [FULL NAME]</li>
+          <li><span class="text-gray-500" data-i18n="mentions_legal_form_label">Legal form:</span> <span data-i18n="mentions_legal_form">SAS (Simplified Joint-Stock Company) — registered in France</span></li>
+          <li><span class="text-gray-500" data-i18n="mentions_address_label">Registered office:</span> 60 rue François Ier, 75008 Paris, France</li>
+          <li><span class="text-gray-500">SIREN:</span> 933 081 309</li>
+          <li><span class="text-gray-500">SIRET:</span> 933 081 309 00017</li>
+          <li><span class="text-gray-500" data-i18n="mentions_rcs_label">RCS:</span> 933 081 309 R.C.S. Paris</li>
+          <li><span class="text-gray-500" data-i18n="mentions_capital_label">Share capital:</span> 3 000,00 &euro;</li>
+          <li><span class="text-gray-500" data-i18n="mentions_president_label">President:</span> Hugo Trojani</li>
           <li><span class="text-gray-500">Email:</span> hugo@brinstar.fr</li>
         </ul>
 
         <h3 class="text-xl font-semibold text-pink-300 mb-3" data-i18n="mentions_director_title">Publication Director</h3>
-        <p class="text-gray-300 mb-6" data-i18n="mentions_director_text">[FULL NAME], President of Brinstar Studio.</p>
+        <p class="text-gray-300 mb-6" data-i18n="mentions_director_text">Hugo Trojani, President of Brinstar Studio.</p>
 
         <h3 class="text-xl font-semibold text-pink-300 mb-3" data-i18n="mentions_hosting_title">Hosting</h3>
         <ul class="text-gray-300 space-y-1 mb-6 list-none">
@@ -89,8 +90,8 @@
         <h2 class="text-3xl font-bold text-pink-400 mb-6" data-i18n="privacy_title">Privacy Policy</h2>
 
         <h3 class="text-xl font-semibold text-pink-300 mb-3" data-i18n="privacy_controller_title">1. Data Controller</h3>
-        <p class="text-gray-300 mb-1">Brinstar Studio (SASU)</p>
-        <p class="text-gray-300 mb-1">[REGISTERED ADDRESS]</p>
+        <p class="text-gray-300 mb-1" data-i18n="privacy_controller_name">Brinstar Studio (SAS)</p>
+        <p class="text-gray-300 mb-1">60 rue François Ier, 75008 Paris, France</p>
         <p class="text-gray-300 mb-6">Contact: hugo@brinstar.fr</p>
 
         <h3 class="text-xl font-semibold text-pink-300 mb-3" data-i18n="privacy_data_title">2. Personal Data Collected</h3>
@@ -153,11 +154,25 @@
             <li data-i18n="privacy_rc_3">Cognitive performance statistics</li>
           </ul>
         </div>
-        <div class="mb-6">
+        <div class="mb-4">
           <p class="font-semibold text-white mb-1">Wallrun (wallrun.brinstar.fr)</p>
           <ul class="text-gray-300 text-sm list-disc list-inside space-y-1">
             <li data-i18n="privacy_wr_1">Games played and results</li>
             <li data-i18n="privacy_wr_2">Game statistics (wins, losses, moves played)</li>
+          </ul>
+        </div>
+        <div class="mb-4">
+          <p class="font-semibold text-white mb-1">MealMap (mealmap.brinstar.fr)</p>
+          <ul class="text-gray-300 text-sm list-disc list-inside space-y-1">
+            <li data-i18n="privacy_mm_1">Custom meals created (name, ingredients, tags)</li>
+            <li data-i18n="privacy_mm_2">Weekly meal planning and favorites</li>
+            <li data-i18n="privacy_mm_3">Shopping lists and dietary preferences</li>
+          </ul>
+        </div>
+        <div class="mb-6">
+          <p class="font-semibold text-white mb-1">Alchemy (alchemy.brinstar.fr)</p>
+          <ul class="text-gray-300 text-sm list-disc list-inside space-y-1">
+            <li data-i18n="privacy_al_1">Game progress, scores and unlocked content are stored locally in your browser (localStorage). No personal data is sent to our servers for this application.</li>
           </ul>
         </div>
 
@@ -273,6 +288,8 @@
 
         <h3 class="text-xl font-semibold text-pink-300 mb-3" data-i18n="cookies_used_title">2. Cookies Used</h3>
 
+        <p class="text-gray-400 text-sm mb-4" data-i18n="cookies_scope_note"><strong>Scope:</strong> brinstar.fr itself (this website) only uses Google Analytics cookies (if consent is given) and stores your cookie choice in your browser's <em>localStorage</em> (key <code class="font-mono text-xs">brinstar_consent</code>, not a traditional HTTP cookie). The <code class="font-mono text-xs">better-auth.session_token</code> cookie listed below is set exclusively on our authenticated applications (habitloop, recall, wallrun, mealmap.brinstar.fr) when you log in — it is not placed by brinstar.fr.</p>
+
         <h4 class="text-lg font-semibold text-gray-200 mb-2" data-i18n="cookies_necessary_title">Strictly Necessary Cookies (no consent required)</h4>
         <div class="overflow-x-auto mb-4">
           <table class="text-sm text-gray-300">
@@ -334,7 +351,7 @@
         <h2 class="text-3xl font-bold text-pink-400 mb-6" data-i18n="terms_title">Terms of Use</h2>
 
         <h3 class="text-xl font-semibold text-pink-300 mb-3" data-i18n="terms_1_title">1. Purpose</h3>
-        <p class="text-gray-300 mb-6" data-i18n="terms_1_text">These Terms of Use govern access to and use of the applications and services provided by Brinstar Studio (hereinafter "the Services"): Habit Loop, Recall, Wallrun, and any future application published under the Brinstar brand.</p>
+        <p class="text-gray-300 mb-6" data-i18n="terms_1_text">These Terms of Use govern access to and use of the applications and services provided by Brinstar Studio (hereinafter "the Services"): Habit Loop, Recall, Wallrun, MealMap, Alchemy, and any future application published under the Brinstar brand.</p>
 
         <h3 class="text-xl font-semibold text-pink-300 mb-3" data-i18n="terms_2_title">2. Acceptance</h3>
         <p class="text-gray-300 mb-6" data-i18n="terms_2_text">By creating an account, you fully accept these Terms of Use. If you do not accept these terms, you must not use the Services.</p>
@@ -353,6 +370,8 @@
           <li data-i18n="terms_4_hl"><strong>Habit Loop</strong> — habit tracking and management</li>
           <li data-i18n="terms_4_rc"><strong>Recall</strong> — cognitive training mini-games (brain training)</li>
           <li data-i18n="terms_4_wr"><strong>Wallrun</strong> — online strategy game</li>
+          <li data-i18n="terms_4_mm"><strong>MealMap</strong> — weekly meal planning and automatic shopping lists</li>
+          <li data-i18n="terms_4_al"><strong>Alchemy</strong> — merge/puzzle game (client-side only, no account required)</li>
         </ul>
         <p class="text-gray-300 mb-6" data-i18n="terms_4_asis">The Services are provided "as is." Brinstar Studio strives to ensure availability but does not guarantee uninterrupted access.</p>
 
