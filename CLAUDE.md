@@ -29,16 +29,34 @@ La landing page DOIT être indexable par Google. Fichiers requis à la racine :
 - **Habit Loop** — suivi d'habitudes → habitloop.brinstar.fr
 - **Recall** — mini-jeux brain training → recall.brinstar.fr
 - **Wallrun** — jeu de stratégie → wallrun.brinstar.fr
-- **MealMap** — planification de repas → mealmap.brinstar.fr (à venir)
+- **MealMap** — planification de repas → mealmap.brinstar.fr
+- **Alchemy** — jeu merge/puzzle → alchemy.brinstar.fr
+- **Banned** — tracker de mots bannis + gages → banned.brinstar.fr
+- **Anima** — créature virtuelle + gamification → anima.brinstar.fr (à venir)
+- **CaloriesGrind** — compteur de calories → calgrind.brinstar.fr (à venir)
 
 ## Design
 - Esthétique retro gaming : fond sombre (`bg-gray-950`), accent pink (`pink-400`/`pink-500`), police monospace
 - Cohérent avec le branding Brinstar (palette néon/synthwave)
 
 ## Git workflow (OBLIGATOIRE)
-- **TOUJOURS exécuter `git branch` AVANT tout commit** pour vérifier la branche courante
-- **JAMAIS de commit direct sur `main`** sans vérification — sur ce repo, `main` = prod (GitHub Pages deploy auto), donc toute modification doit être intentionnelle
-- Privilégier une branche `develop` ou `feature/*` + PR vers `main`
+
+### Début de chaque session — exécuter en premier
+```bash
+git fetch origin
+git branch -vv
+git status
+```
+
+### Après un merge de PR sur GitHub
+```bash
+git checkout main && git pull origin main
+```
+
+### Règles
+- **JAMAIS de commit direct sur `main`** — `main` = prod (GitHub Pages deploy auto)
+- Travailler sur `develop` ou `feature/*` + PR vers `main`
+- `gh pr create --base main` (exception : ce repo n'a pas de staging, main = prod)
 
 ## Conventions
 - Contact email : hugo@brinstar.fr
