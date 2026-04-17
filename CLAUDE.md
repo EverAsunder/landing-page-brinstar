@@ -45,18 +45,19 @@ La landing page DOIT être indexable par Google. Fichiers requis à la racine :
 ```bash
 git fetch origin
 git branch -vv
-git status
 ```
-
-### Après un merge de PR sur GitHub
+- Si `main` est `[ahead X]` → **stop**, investiguer les commits sauvages avant de continuer
+- Sinon :
 ```bash
 git checkout main && git pull origin main
+git checkout develop
+git status
 ```
 
 ### Règles
 - **JAMAIS de commit direct sur `main`** — `main` = prod (GitHub Pages deploy auto)
 - Travailler sur `develop` ou `feature/*` + PR vers `main`
-- `gh pr create --base main` (exception : ce repo n'a pas de staging, main = prod)
+- `gh pr create --base main`
 
 ## Conventions
 - Contact email : hugo@brinstar.fr
